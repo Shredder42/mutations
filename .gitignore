@@ -1,0 +1,7 @@
+# Data (too large)
+/data/
+
+
+# jupyter notebook checkpoints
+.ipynb_checkpoints
+
