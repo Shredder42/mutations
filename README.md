@@ -28,14 +28,51 @@ Therefore, the goal of this project is to use natural language processing and de
 
 ## Data
 
-The data set was provided to [Kaggle](https://www.kaggle.com/c/msk-redefining-cancer-treatment/data) by the Memorial Sloan Kettering Cancer Center (MSKCC). It contained 3,321 mutations in the 9 classes listed above. The change-of-function, likely change-of-function, and neutral classes had substantially fewer observations than the rest, and I chose to remove them. There were also five observations that did not contain any actual text from literature, so those were removed as well. After the data preprocessing, 3,171 values from 6 classes remained, shown below in the graph.
+### Overall data set
 
-![Mutation classes](img/overall_mutation_classes.png)
+The data set was provided to [Kaggle](https://www.kaggle.com/c/msk-redefining-cancer-treatment/data) by the Memorial Sloan Kettering Cancer Center (MSKCC). It contained 3,321 mutations in the 9 classes listed above. The change-of-function, likely change-of-function, and neutral classes had substantially fewer observations than the rest, and I chose to remove them. There were also five observations that did not contain any actual text from literature, so those were removed as well. After the data preprocessing, 3,171 values from 6 classes remained, listed below.
 
+* Likely LOF: 566
+* Likely GOF: 452
+* LOF: 686
+* Likely neutral: 242
+* Inconclusive: 273
+* GOF: 952
 
 ![Mutation classes](img/overall_mutation_classes_ss.png)
 
+### Features and data example
 
+There were only a handful of freatures in this data set.
 
+* Gene in which the mutation exists
+* Mutation within in the gene
+* Class of mutation
+* Research text
 
+### Training and testing sets
+
+The data set was split into a training set to build the models and a test sets to evaluate them.
+
+The training set had 2,219 observations.
+
+* Likely LOF: 396
+* Likely GOF: 316
+* LOF: 480
+* Likely neutral: 170
+* Inconclusive: 191
+* GOF: 666
+
+![Training mutation classes](img/training_set_mutation_classes_ss.png)
+
+The test set had 952 observations.
+
+* Likely LOF: 396
+* Likely GOF: 316
+* LOF: 206
+* Likely neutral: 170
+* Inconclusive: 191
+* GOF: 286
+
+![Test mutation classes](img/test_set_mutation_classes_ss.png)
 <hr>
