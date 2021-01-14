@@ -22,7 +22,7 @@ To understand how mutations in genes disrupt our biological processes, a little 
 
 With the recent advances in genetic sequencing, personalized medicine based on a person's genome is rapidly becoming a realistic strategy to treat diseases. This means we can take a person's genome, and prophylactically treat them based on whether or not we think a certain disease (in our case, cancer) is likely to develop. However, there are thousands of mutations in any one person's DNA. Sorting through all the mutations and determining which ones are active in causing cancer and which ones are neutral, or "along for the ride" is an extremely important task. However, currently this requires pathologists to manually review the scientific literature relating to each mutation and determine its classification. This can be a long and tedious process.
 
-Therefore, the goal of this project is to use natural language processing and develop a machine learning model that can look through the researc literature and classify the mutations for us.
+Therefore, the goal of this project is to utilize natural language processing and develop a machine learning model that can look through the research literature and classify the mutations for us.
 
 <hr>
 
@@ -96,3 +96,40 @@ The first model applied is the Naive Bayes model. This model was chosen first be
 The Naive Bayes model classified the test data set with an accuracy of 55.4%. The confusion matrix for this model is shown below.
 
 ![Naive Bayes Confusion Matrix](img/nb_overall_cm_ss.png)
+
+
+### Random Forest Overall Model
+
+The next model applied is the Random Forest model. This is a classification model that is likely to improve on the results from the Naive Bayes model.
+
+The Random Foreset model improved the accuracy of classifications to 67.2%. This is a respectable accuracy for classifying data processed with natural language processing. The confusion matrix for this model is shown below.
+
+![Random Forest Overall Confusion Matrix](img/rf_6_class_cm_ss.png)
+
+The graph of the gini impurity below shows the top 15 most important words the model used when distinguising between classes.
+
+![Overall Gini Impurity Plot](img/rf_gini_overall_ss.png)
+
+Some of the included words require further investigation, but some of them do stand out. The first thing to notice is that three different forms of the word "activate" are included in the plot (activation, activating, activated). This words are likely present becuase when proto-oncogenes get over activated and continue unchecked, cancer is likely to develop, as is described in the background section of the introduction. The other notable word in this list is suppressor. The consequences of mutations in tumor-suppressor genes are described in the same section.
+
+Other notable words include:
+* Nonsense - this is a kind of mutation that causes a protein to stop being created. This results in a partially constructed protein.
+* Oncogenic - meaning cancerous
+
+While this model improved the classification, it was not perfect. A look at the confusion matrix above show reveals two areas in particular where the model struggled to distinguish between two classes and had several misclassifications. The first was distinguishing between the "loss-of-function" and the "likely loss-of-function" classes. The second was "gain-of-function" and "likely gain-of-function" classes. It makes intuitive sense that these would be the classes that the model struggles with the most because they are the closest together and toughest to distinguish between. Therefore, another model investigates one of these specific classes below.
+
+### Random Forest LOF vs Likely LOF Model
+
+
+
+<hr>
+
+## Future Steps
+
+There are several ways in which I would like to take this project further.
+
+* I would like to analyze the other top words and determine how they are aiding in the classification process.
+* Focus closer on the impacts of these mutations by re-classifying the mutations to whether or not they are cancer causing.
+* Apply this model to other literature that is not included in this data set.
+
+
