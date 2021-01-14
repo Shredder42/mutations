@@ -50,6 +50,15 @@ There were only a handful of freatures in this data set.
 * Class of mutation
 * Research text
 
+Shown below is an example of one of the data points in this data set.
+
+* Gene: Casitas B-lineage lymphoma (*CBL*)
+* Mutation: L399V
+    * This is a missense mutation at the 399th position in the *CBL* gene. At this position, the gene should code for the amino acid leucine, but the mutation causes it to code for the amino acid valine instead.
+* Class: LOF
+    * This mutation results in the protein that is coded from the *CBL* gene being unable to perform its required function.
+* Research text: "Oncogenic mutations in the monomeric Casitas B-lineage lymphoma (Cbl) gene have been found in many tumors but their significance remains largely unknown. Several human c-Cbl (CBL) structures have recently been solved depicting the protein at different stages of its activation cycle and thus provide mechanistic insight underlying how stability-activity tradeoffs in cancer-related proteins may influence disease onset and progression. In this study..."
+
 ### Training and testing sets
 
 The data set was split into a training set to build the models and a test sets to evaluate them.
@@ -75,4 +84,15 @@ The test set had 952 observations.
 * GOF: 286
 
 ![Test mutation classes](img/test_set_mutation_classes_ss.png)
+
 <hr>
+
+## Results
+
+### Naive Bayes Overall Model
+
+The first model applied is the Naive Bayes model. This model was chosen first because it is a good model for text classification.
+
+The Naive Bayes model classified the test data set with an accuracy of 55.4%. The confusion matrix for this model is shown below.
+
+![Naive Bayes Confusion Matrix](img/nb_overall_cm_ss.png)
