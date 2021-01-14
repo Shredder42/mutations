@@ -120,7 +120,15 @@ While this model improved the classification, it was not perfect. A look at the 
 
 ### Random Forest LOF vs Likely LOF Model
 
+To further investigate the results, a random forest model was constructed that only looked at two classes which the original model struggled to tell apart. These were the loss-of-function and likely loss-of-function models. When the other four classes were stripped away, this model distinguised between remianing two classes with an accuracy of 77.9%. This is a big improvment over the previous model. The confusion matrix is shown below.
 
+![Random Forest LOF Confusion Matrix](img/rf_lof_cm_ss.png)
+
+The graph of the gini impurity below shows the top 15 most important words the model used when distinguising between the two classes.
+
+![LOF Gini Impurity Plot](img/rf_gini_lof_ss.png)
+
+As with the overall model, several of the included words require further investigation. The first word to notice in this chart is the top one, "inactive." This is particularly notable because when there is a loss-of-funciton mutation, that means protein produced from that gene is unable to perform its function. This makes that gene inactive. The other word to notice is *PTEN*. This is the phosphatase and tensin homolog gene and is a known tumor-suppressor that when mutated, is associated with several types of cancer, including glioblastoma, lung cancer, breast cancer, and prostate cancer.
 
 <hr>
 
